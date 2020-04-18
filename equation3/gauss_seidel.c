@@ -22,19 +22,17 @@ Matrix* gauss_seidel(Matrix* mat,Matrix* xn,double eps){
         }
     }
     for(int k = 0;k < mat->m;k++){
-        m_set(b,k,1,m_get(mat,k,mat->n-1));
+        m_set(b,k,0,m_get(mat,k,mat->n-1));
     }
-
     Matrix* DL = add(D,L);
     Matrix* DL_inv = inv(DL);
     Matrix* neg_B = times(DL_inv,U);
 
-    Matrix* de[] = {D,L,U,b,DL,DL_inv,neg_B};
-    distory(de,7);
     Matrix* B = scalar_times(neg_B,-1);
     Matrix* f = times(DL_inv,b);
-    Matrix* Bx;
-    Matrix* x;
+    Matrix* de[] = {D,L,U,b,DL,DL_inv,neg_B};
+    distory(de,7);
+    Matrix *Bx,*x;
     // 开始迭代
     do{
         x = xn;
@@ -60,4 +58,5 @@ int main(){
     Matrix* mat = array2mat((double*)a,3,4);
     Matrix* xn = array2mat((double*)b,3,1);
     Matrix* x = gauss_seidel(mat,xn,1e-3);
+    disp_m(x);
 }

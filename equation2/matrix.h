@@ -172,4 +172,5 @@ Matrix* scalar_times(Matrix* a,double lambda){
     for(int i = 0;i < a->m*a->n;i++){
         m_set(res,0,i,m_get(a,0,i) * lambda);
     }
+    return res;
 }
