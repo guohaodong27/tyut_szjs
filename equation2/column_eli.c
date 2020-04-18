@@ -35,17 +35,18 @@ void col_eli(Matrix* mat){
  * @param mat: 一个上三角矩阵
  * @return 方程的解,一个列向量,自上向下依次x0,x1...xn
  */
-Matrix* get_result(Matrix* mat){
+Matrix* get_result(Matrix* mat,int* swap_map){
     Matrix* res = m_create(mat->m,1);
     double sum =0;
     // 计算每一行
-    for(int xind = mat->n;xind > -1;xind--){
+    for(int xind = mat->m-1;xind > -1;xind--){
         double sum =0;
-        for(int ind = xind+1;ind < mat->m-1;ind++){
+        // 计算和的话,从<xind,xind+1>往后
+        for(int ind = xind+1;ind < mat->m;ind++){
             sum += m_get(mat,xind,ind);
         }
-        double xi  = (m_get(mat,xind,mat->n)-sum) / m_get(mat,xind,xind);
-        m_set(mat,xind,1,xi);
+        double xi  = (m_get(mat,xind,mat->m) - sum) / m_get(mat,xind,xind);
+        m_set(res,swap_map[xind],0,xi);
     }
     return res;
 }
