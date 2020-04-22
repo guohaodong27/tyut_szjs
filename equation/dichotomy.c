@@ -21,8 +21,8 @@ double dichotomy_my(double* f,int len,double a,double b,double esp){
 // test
 int main(){
     // 系数向量
-    double x[] = {1,0,-2,-5};
+    double x[] = {1,4,0,-10};
     // 二分法
-    double res = dichotomy_my(x,4,2,3,1e-3);
-    printf("%lf",res);
+    double res = dichotomy_my(x,4,1,2,1e-3);
+    printf("%lf\n",res);
 }

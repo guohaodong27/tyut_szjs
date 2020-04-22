@@ -53,7 +53,7 @@ Matrix* gauss_seidel(Matrix* mat,Matrix* xn,double eps){
 }
 
 int main(){
-    double a[][4] = {{2,-1,-1,-5},{1,5,-1,8},{1,1,10,11}};
+    double a [3][4] = {{10,-1,-2,7.2},{-1,10,-2,8.3},{-1,-1,5,4.2}};
     double b[] = {1,1,1};
     Matrix* mat = array2mat((double*)a,3,4);
     Matrix* xn = array2mat((double*)b,3,1);

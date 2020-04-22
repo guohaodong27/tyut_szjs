@@ -33,7 +33,6 @@ double newton (double* f,int len ,double init,double esp){
             lambda = lambda/2;
         }while(fabs(fx(f,xn,len))>fabs(fx(f,x,len)));
         // 结束条件: x-xn的差小于精确度
-        printf("%lf\t",x);
     }while(fabs(x-xn) > esp);
 
     // 释放df内存
@@ -44,7 +43,7 @@ double newton (double* f,int len ,double init,double esp){
 
 // test
 int main(){
-    double f[] = {1,0,-1,-1};
-    double res = newton(f,4,0.6,1e-3); 
+    double f[] = {1,4,0,-10};
+    double res = newton(f,4,1.5,1e-3); 
     printf("%lf\n",res);
 }

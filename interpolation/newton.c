@@ -4,10 +4,12 @@
 // 牛顿插值
 int main(){
     // param
-    double x[] = {1,2,3,4,5};
-    double y[] = {1,4,7,8,6};
-    int len = 5;
-
+    double x[] = {0.4,0.55,0.65,0.80,0.90,1.05};
+    double y[] = {0.41075,0.57816,0.69675,0.88811,1.02652,1.25386};
+    // double x[] = {1,4,9,16,25,36};
+    // double y[] = {1,2,3,4,5,6};
+    int len = 6;
+    double xn = 0.596;
 
     // allocate memory
     double* area = (double*)malloc(sizeof(double)*len*len);
@@ -43,10 +45,15 @@ int main(){
 
 
     printf("\n\n");
-    for(int i = 0;i< len*len;i+=(len+1)){
-        printf("%6lf\t",area[i]);
+    double sum =0;
+    for(int i = 0;i< len;i++){
+        double mul = 1;
+        for(int k = 0;k < i;k++){
+            mul *= (xn - x[k]);
+        }
+        sum += area[i*(len+1)]* mul;
     }
-    printf("\n");
+    printf("%lf\n",sum);
 
     free(area);
 }
