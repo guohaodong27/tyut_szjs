@@ -1,4 +1,4 @@
-#include "../equation2/matrix.h"
+#include "../matrix.h"
 
 Matrix* gauss_seidel(Matrix* mat,Matrix* xn,double eps){
     

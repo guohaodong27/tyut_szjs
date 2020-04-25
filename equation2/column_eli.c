@@ -1,4 +1,4 @@
-#include "matrix.h"
+#include "../matrix.h"
 #include<math.h>
 /**
  * 列主元消元法

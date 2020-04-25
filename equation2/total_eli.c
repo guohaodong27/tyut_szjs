@@ -1,4 +1,4 @@
-#include"matrix.h"
+#include"../matrix.h"
 
 void total_eli(Matrix* mat,int* record){
     for(int j = 0;j < mat->n;j++){

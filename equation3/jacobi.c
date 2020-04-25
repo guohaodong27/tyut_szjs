@@ -1,4 +1,4 @@
-#include "../equation2/matrix.h"
+#include "../matrix.h"
 /**
  * 雅克比方法,迭代
  * @param mat 增广矩阵

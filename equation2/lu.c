@@ -1,4 +1,4 @@
-#include "matrix.h"
+#include "../matrix.h"
 
 /** LU分解 doolittle
  * @param mat 增广矩阵
